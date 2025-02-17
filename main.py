@@ -40,7 +40,7 @@ def run_script():
     sleep(3)
 
     while running:
-        dropdown_items = navegador.find_elements(By.XPATH, '/html/body/jhi-main/climber-shell/climber-header/nav[2]/div/div[2]/climber-dropdown-v2/div[2]/div/div[2]/div')
+        dropdown_items = navegador.find_elements(By.XPATH, '/html/body/jhi-main/climber-shell/climber-header/nav[2]/div/div[2]/climber-dropdown-v2/div[2]/div/div[2]/div/div')
         num_items = len(dropdown_items)
 
         for num in range(1, num_items + 1):
@@ -48,7 +48,7 @@ def run_script():
                 break
             dropdown = navegador.find_element(By.XPATH, '/html/body/jhi-main/climber-shell/climber-header/nav[2]/div/div[2]/climber-dropdown-v2/div[1]/div/div')
             navegador.execute_script("arguments[0].click();", dropdown)
-            hotel = navegador.find_element(By.XPATH, f'/html/body/jhi-main/climber-shell/climber-header/nav[2]/div/div[2]/climber-dropdown-v2/div[2]/div/div[2]/div[{num}]')
+            hotel = navegador.find_element(By.XPATH, f'/html/body/jhi-main/climber-shell/climber-header/nav[2]/div/div[2]/climber-dropdown-v2/div[2]/div/div[2]/div/div[{num}]')
             navegador.execute_script("arguments[0].click();", hotel)
             sleep(10)
 
